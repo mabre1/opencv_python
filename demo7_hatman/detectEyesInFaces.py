@@ -13,12 +13,26 @@ while(True):
         faceCount = 0
         
         for (x,y,w,h) in faces:
-                cv.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
+                # cv.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
                 
-                cv.putText(frame,'HUMAN DETECTED:',(x,int(y+h+(w/8))), font, (w/300),(66, 149, 244),int(w/75),cv.LINE_AA)
-                cv.putText(frame,'ACTIVATE LASERS', (int(x+(w/8)),int(y+h+(w/4))), font, (w/300),(0,0,255),int(w/75),cv.LINE_AA)
                 faceCount += 1
 
+                ratio = w / singleHat.shape[1]
+                hat = cv.resize(singleHat,None,fx=ratio, fy=ratio, interpolation = cv.INTER_CUBIC)
+
+                
+                y_offset = y-hat.shape[0]
+                x_offset = int((x + (w/2))-(hat.shape[1]/2))
+                hat_cutoff_y = hat.shape[0] - (frame.shape[0] - y_offset)
+                hat_cutoff_x = hat.shape[1] - (frame.shape[1] - x_offset)
+
+                # draw a hat ontop of all detected faces
+                for j in range(0,hat.shape[0]-max(0, hat_cutoff_y)):
+                        for i in range(0,hat.shape[1]-max(0, hat_cutoff_x)):
+                                # shitty chroma-key: 
+                                if hat.item(j,i) < 190:
+                                        frame[y_offset+j, x_offset+i] = hat[j,i]
+                
                 roi_gray = gray[y:y+h, x:x+w]
                 roi_color = frame[y:y+h, x:x+w]
                 eyes = eye_cascade.detectMultiScale(roi_gray)
@@ -26,7 +40,7 @@ while(True):
                 for (ex,ey,ew,eh) in eyes:
                         cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
                                 
-        cv.putText(frame, 'Humans: ' + str(faceCount),(20,30), font, 0.5,(100,255,255),2,cv.LINE_AA)
+        cv.putText(frame,str(faceCount),(20,30), font, 0.5,(100,255,255),2,cv.LINE_AA)
         cv.imshow('frame',frame)
         if cv.waitKey(1) & 0xFF == ord('q'):
                 break
