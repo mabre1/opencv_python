@@ -2,8 +2,6 @@ import numpy as np
 import cv2 as cv 
 face_cascade = cv.CascadeClassifier('./resources/haarCascades/haarcascade_frontalface_default.xml')
 eye_cascade = cv.CascadeClassifier('./resources/haarCascades/haarcascade_eye.xml')
-hats = [cv.imread('./resources/images/hat1.jpg',0),cv.imread('./resources/images/hat2.jpg',0),cv.imread('./resources/images/hat3.jpg',0)]
-singleHat = cv.imread('./resources/images/hat3.jpg',0)
 font = cv.FONT_HERSHEY_SIMPLEX
 cap = cv.VideoCapture(0)
 while(True):
