@@ -16,7 +16,7 @@ My install uses release 3.7.1 (python-3.7.1-amd64.exe)
 
 ### 2 - **Download and install the Numpy version corresponding to your Python installation from:**
 #### http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
-my install used numpy-1.15.4+mkl-cp37-cp37m-win_amd64.whl
+my install used `numpy-1.15.4+mkl-cp37-cp37m-win_amd64.whl`
 
 install using: 
 ```bash
@@ -25,7 +25,7 @@ pip install numpy-1.15.4+mkl-cp37-cp37m-win_amd64.whl
 
 ### 3 - **Download and install the OpenCV version corresponding to your Python installation**
 #### http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
-my install used opencv_python-3.4.4-cp37-cp37m-win_amd64.whl 
+my install used `opencv_python-3.4.4-cp37-cp37m-win_amd64.whl`
 
 install using: 
 ```bash
@@ -39,7 +39,7 @@ import cv2
 print(cv2.__version__)
 ```
 
-then run `helloworld.py` with:
+then run `helloworld.py` (or whatever you called your .py) with:
 ```bash
 python helloworld.py
 ```
