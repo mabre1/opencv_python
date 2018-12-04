@@ -43,3 +43,10 @@ then run `helloworld.py` (or whatever you called your .py) with:
 ```bash
 python helloworld.py
 ```
+
+# **Examples**
+You will also find several example `.py` files ranging from simple input output through to more involved examples. run them the same as you ran your `helloworld.py` in the setup.
+<br>
+e.g.
+```bash
+python 7snapFilter.py
