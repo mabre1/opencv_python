@@ -11,6 +11,7 @@ But it is reletively simple setup so below is the main 3 steps:
 ### 1 - **Download and install python for all users**
 #### https://www.python.org/downloads/
 Choose a custom install; on the Advanced Options screen make sure to check Install for all users, Add Python to environment variables and Precompile standard library.
+<br>
 My install uses release 3.7.1 (python-3.7.1-amd64.exe)
 
 ### 2 - **Download and install the Numpy version corresponding to your Python installation from:**
