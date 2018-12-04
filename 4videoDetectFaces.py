@@ -21,7 +21,7 @@ while(True):
                 cv.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
         
         # show resulting frame
-        cv.imshow('frame',frame)
+        cv.imshow('faces',frame)
 
         # quit when 'q' is pressed
         if cv.waitKey(1) & 0xFF == ord('q'):

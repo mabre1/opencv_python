@@ -38,7 +38,7 @@ while(True):
                         cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
         
         # show resulting frame
-        cv.imshow('frame',frame)
+        cv.imshow('subset detection',frame)
 
         # if 'q' is pressed, exit
         if cv.waitKey(1) & 0xFF == ord('q'):

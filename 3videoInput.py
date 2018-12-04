@@ -10,7 +10,7 @@ while(True):
         ret, frame = cap.read()
         
         # show the frame
-        cv.imshow('frame',frame)
+        cv.imshow('video output',frame)
 
         # exit if 'q' is pressed
         if cv.waitKey(1) & 0xFF == ord('q'):

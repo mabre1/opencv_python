@@ -53,7 +53,7 @@ while(True):
         cv.putText(frame, 'Humans: ' + str(faceCount),(20,30), font, 0.5,(100,255,255),2,cv.LINE_AA)
 
         # show resulting frame
-        cv.imshow('frame',frame)
+        cv.imshow('EXTERMINATE',frame)
 
         # if 'q' is pressed, exit
         if cv.waitKey(1) & 0xFF == ord('q'):

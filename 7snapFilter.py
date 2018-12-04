@@ -68,7 +68,7 @@ while(True):
                 startTime = time.time()
         
         # show resulting image
-        cv.imshow('frame',frame)
+        cv.imshow('Fancify',frame)
 
         # if 'q' is pressed, exit
         if cv.waitKey(1) & 0xFF == ord('q'):
